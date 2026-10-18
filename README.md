@@ -1,36 +1,54 @@
 # CamNexus
+**Bridging Needs. Building Futures.**
 
-Build a responsive, professional web application called EduBridge ImpactLab for the PS43 Foundation hackathon challenge in Cameroon.
+## About the Project
 
-The application helps a nonprofit assess schools, prioritize educational needs, and compare investment options before allocating resources.
+CamNexus is a web-based educational resource platform developed for the PS43 Foundation hackathon challenge.
 
-Create three working sections:
+The platform aims to help identify educational needs across Cameroon, prioritize communities requiring support, and connect schools with potential resource partners.
 
-1. School Assessment: A form for school name, region, student population, number of computers, electricity reliability (reliable/intermittent/none), internet availability, and primary educational needs. Save submissions locally and display them in a school list. Use 5 clearly labeled fictional sample schools in Cameroon.
+CamNexus combines *Cameroon* and *Nexus*, meaning connection.
 
-2. Priority Dashboard: Assign each school a transparent illustrative priority score from 0 to 100 using its reported needs, computers per student, and infrastructure gaps. Explain how the score is calculated. Allow users to select a school.
+## Key Features
 
-3. Investment Simulator: For the selected school, let the user adjust a budget and compare three options: equipment-first, infrastructure-first, and low-tech learning support. Show hypothetical costs, whether each option fits the budget, infrastructure prerequisites, suitability warnings, and estimated students who could be served. Do not claim these estimates are real predictions.
+- **School Needs Assessment:** Schools submit requests for educational resources, including specific items and quantities.
+- **Interactive Cameroon Map:** Visualizes community needs and criticality levels based on school-reported information.
+- **Community Needs Dashboard:** Displays criticality classifications and the most requested educational resources.
+- **Resource Partner Contributions:** Organizations can propose contributions based on available resources and preferred regions.
+- **Administrator Dashboard:** Provides an overview of school requests, proposed contributions, and activity history.
+- **Transparent Prioritization:** Classifies needs using resource categories, including building safety, water and sanitation, electricity, furniture, learning materials, and technology.
 
-Add a recommendation panel explaining why an option may be preferable, but make clear that PS43 staff and local partners must validate final decisions.
+## Technology
 
-Use a modern, clean nonprofit dashboard design, accessible typography, and mobile-friendly layouts. Add functional navigation. Keep data local without authentication, backend services, paid APIs, or fabricated real-world partnerships. Add a visible note that sample data, costs, and outcomes are illustrative. Prioritize a working demo over complicated extra features.
+Built using Lovable, React, TypeScript, and Tailwind CSS, with Leaflet and OpenStreetMap for interactive mapping.
 
-This project was built with [Lovable](https://lovable.dev).
+## Implementation Roadmap
 
-## Build with Lovable
+**Phase 1 — Pilot Testing**
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/12a867c9-9829-4948-8944-989a10c30a15).
+We test CamNexus with a small number of schools in Cameroon and gather feedback from educators and PS43 Foundation.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+**Phase 2 — Platform Development**
 
-## Development
+A shared online database, secure school accounts, and improved accessibility for areas with limited internet connectivity are introduced.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+**Phase 3 — Resource Coordination**
 
-```sh
+Verified resource partners are brought on board, and resource matching and delivery tracking systems are introduced.
+
+**Phase 4 — Expansion & Impact**
+
+CamNexus is expanded to more schools across Cameroon, and the impact of delivered resources on educational conditions is evaluated.
+
+## Prototype Disclaimer
+
+CamNexus is a hackathon proof of concept. It currently uses fictional demonstration schools and browser-local data storage. Resource contributions are proposals rather than confirmed deliveries. Criticality classifications are illustrative and based on school-reported needs.
+
+CamNexus is an independent hackathon project and is not an official PS43 Foundation platform.
+
+## Built With
+
+Developed using [Lovable](https://lovable.dev).
 git clone <this-repository-url>
 cd <repository-name>
 npm i
