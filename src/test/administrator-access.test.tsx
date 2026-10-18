@@ -36,7 +36,9 @@ describe("Demo administrator access", () => {
     render(<Harness />);
     fireEvent.change(screen.getByLabelText("Email"), { target: { value: "judge@example.com" } });
     fireEvent.change(screen.getByLabelText("Password"), { target: { value: "not-real-credentials" } });
-    fireEvent.submit(screen.getByRole("button", { name: "Login", exact: true }).closest("form") as HTMLFormElement);
+    const form = screen.getByRole("button", { name: /^Login$/ }).closest("form");
+    if (!form) throw new Error("Login form missing");
+    fireEvent.submit(form);
     expect(screen.queryByTestId("dashboard")).toBeNull();
   });
 });

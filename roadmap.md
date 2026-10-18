@@ -3,7 +3,7 @@
 ## Administrator demo login
 - [x] Add a demo-only login gate with email/password fields and public demo entry
 - [x] Preserve the existing dashboard and records, label demo access and add logout
-- [ ] Verify direct entry, demo tabs, logout, refresh and unchanged saved records
+- [x] Verify direct entry, demo tabs, logout, refresh and unchanged saved records
 
 ## School resource workspace
 - [ ] Add signed-in school resource matches using existing organization offers
