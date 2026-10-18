@@ -88,7 +88,7 @@ function AdministratorDashboard() {
         </div>
       </section>
       <p className="text-xs text-muted-foreground">Criticality is a preliminary assessment based on school-reported resource needs. It has not been independently verified.</p>
-    </>}
+    </>
     <details className="text-xs text-muted-foreground"><summary className="cursor-pointer">About This Demo</summary><p className="mt-2">Administrator access and verification are simulated, not production-secure or actual PS43 authorization. Reviews do not approve funding or commit resources.</p></details>
   </div>;
 }
