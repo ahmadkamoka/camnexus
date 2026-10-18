@@ -1,8 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Building2, ChevronDown, History, LogOut, School as SchoolIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SubmissionDetails } from "@/components/admin/AdminActivityHistory";
+import { AdministratorAccess } from "@/components/admin/AdministratorAccess";
 import { useStore } from "@/lib/store";
 import { adminSchoolRequests, adminSubmissionActivity, readAdminContributions, type DemoContribution } from "@/lib/admin-dashboard";
 import { criticalityColor, criticalityLevelLabel, type CriticalityLevel } from "@/lib/criticality";
@@ -47,6 +48,10 @@ function ContributionDetails({ contribution }: { contribution: DemoContribution 
 }
 
 function Management() {
+  return <AdministratorAccess><AdministratorDashboard /></AdministratorAccess>;
+}
+
+function AdministratorDashboard() {
   const { schools, demoSession, setDemoSession } = useStore();
   const [section, setSection] = useState<Section>("schools");
   const [openId, setOpenId] = useState("");
@@ -66,9 +71,9 @@ function Management() {
   return <div className="space-y-4">
     <div className="flex flex-wrap items-center justify-between gap-3">
       <h1 className="font-display text-2xl font-bold">CamNexus Administrator</h1>
-      {demoSession?.role === "admin" && <Button variant="outline" onClick={() => { setDemoSession(null); choose("schools"); }}><LogOut />Exit CamNexus Administrator</Button>}
+      {demoSession?.role === "admin" && <div className="flex flex-wrap items-center gap-3"><span className="text-xs font-medium text-muted-foreground">Demo Administrator Access</span><Button variant="outline" onClick={() => { setDemoSession(null); choose("schools"); }}><LogOut />Logout</Button></div>}
     </div>
-    {demoSession?.role !== "admin" ? <div className="space-y-3"><p>Enter the fictional administrator demonstration to review local assessments. This ends any school demo session.</p><div className="flex flex-wrap gap-2"><Button onClick={() => { choose("schools"); setDemoSession({ role: "admin" }); }}>Enter CamNexus Administrator</Button><Button variant="link" asChild><Link to="/">Back to Home</Link></Button></div></div> : <>
+    <>
       <nav aria-label="Administrator sections" className="grid grid-cols-3 gap-2 sm:gap-3">{sections.map(({ id, label, icon: Icon }) => <Button key={id} variant={section === id ? "secondary" : "outline"} aria-current={section === id ? "page" : undefined} onClick={() => choose(id)} className="h-auto min-h-24 flex-col gap-2 whitespace-normal rounded-md px-2 py-3 sm:flex-row sm:justify-start sm:gap-3 sm:px-4"><Icon className="size-5 shrink-0 text-primary" /><span className="min-w-0 text-center sm:text-left"><span className="block text-xs font-semibold sm:text-sm">{label}</span><span className="block text-lg font-semibold">{counts[id]}</span></span></Button>)}</nav>
       <section aria-label={sections.find((item) => item.id === section)?.label} className="min-h-0">
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2"><h2 className="font-display text-base font-semibold">{sections.find((item) => item.id === section)?.label}</h2><span className="text-xs text-muted-foreground">{section === "schools" ? "Current submitted assessments" : section === "contributions" ? "Proposed · awaiting review" : "Most recent first"}</span></div>
@@ -83,7 +88,7 @@ function Management() {
         </div>
       </section>
       <p className="text-xs text-muted-foreground">Criticality is a preliminary assessment based on school-reported resource needs. It has not been independently verified.</p>
-    </>}
+    </>
     <details className="text-xs text-muted-foreground"><summary className="cursor-pointer">About This Demo</summary><p className="mt-2">Administrator access and verification are simulated, not production-secure or actual PS43 authorization. Reviews do not approve funding or commit resources.</p></details>
   </div>;
 }
