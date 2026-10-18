@@ -15,8 +15,6 @@ import { Route as AssessRouteImport } from './routes/assess'
 import { Route as AssessmentManagementRouteImport } from './routes/assessment-management'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as PartnersRouteImport } from './routes/partners'
-import { Route as ResourceTrackerRouteImport } from './routes/resource-tracker'
-import { Route as SchoolMatchesRouteImport } from './routes/school-matches'
 import { Route as SimulatorRouteImport } from './routes/simulator'
 import { Route as PartnersIndexRouteImport } from './routes/partners.index'
 
@@ -50,16 +48,6 @@ const PartnersRoute = PartnersRouteImport.update({
   path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResourceTrackerRoute = ResourceTrackerRouteImport.update({
-  id: '/resource-tracker',
-  path: '/resource-tracker',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SchoolMatchesRoute = SchoolMatchesRouteImport.update({
-  id: '/school-matches',
-  path: '/school-matches',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SimulatorRoute = SimulatorRouteImport.update({
   id: '/simulator',
   path: '/simulator',
@@ -78,8 +66,6 @@ export interface FileRoutesByFullPath {
   '/assessment-management': typeof AssessmentManagementRoute
   '/dashboard': typeof DashboardRoute
   '/partners': typeof PartnersRouteWithChildren
-  '/resource-tracker': typeof ResourceTrackerRoute
-  '/school-matches': typeof SchoolMatchesRoute
   '/simulator': typeof SimulatorRoute
   '/partners/': typeof PartnersIndexRoute
 }
@@ -89,8 +75,6 @@ export interface FileRoutesByTo {
   '/assess': typeof AssessRoute
   '/assessment-management': typeof AssessmentManagementRoute
   '/dashboard': typeof DashboardRoute
-  '/resource-tracker': typeof ResourceTrackerRoute
-  '/school-matches': typeof SchoolMatchesRoute
   '/simulator': typeof SimulatorRoute
   '/partners': typeof PartnersIndexRoute
 }
@@ -102,8 +86,6 @@ export interface FileRoutesById {
   '/assessment-management': typeof AssessmentManagementRoute
   '/dashboard': typeof DashboardRoute
   '/partners': typeof PartnersRouteWithChildren
-  '/resource-tracker': typeof ResourceTrackerRoute
-  '/school-matches': typeof SchoolMatchesRoute
   '/simulator': typeof SimulatorRoute
   '/partners/': typeof PartnersIndexRoute
 }
@@ -116,8 +98,6 @@ export interface FileRouteTypes {
     | '/assessment-management'
     | '/dashboard'
     | '/partners'
-    | '/resource-tracker'
-    | '/school-matches'
     | '/simulator'
     | '/partners/'
   fileRoutesByTo: FileRoutesByTo
@@ -127,8 +107,6 @@ export interface FileRouteTypes {
     | '/assess'
     | '/assessment-management'
     | '/dashboard'
-    | '/resource-tracker'
-    | '/school-matches'
     | '/simulator'
     | '/partners'
   id:
@@ -139,8 +117,6 @@ export interface FileRouteTypes {
     | '/assessment-management'
     | '/dashboard'
     | '/partners'
-    | '/resource-tracker'
-    | '/school-matches'
     | '/simulator'
     | '/partners/'
   fileRoutesById: FileRoutesById
@@ -152,8 +128,6 @@ export interface RootRouteChildren {
   AssessmentManagementRoute: typeof AssessmentManagementRoute
   DashboardRoute: typeof DashboardRoute
   PartnersRoute: typeof PartnersRouteWithChildren
-  ResourceTrackerRoute: typeof ResourceTrackerRoute
-  SchoolMatchesRoute: typeof SchoolMatchesRoute
   SimulatorRoute: typeof SimulatorRoute
 }
 
@@ -201,20 +175,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/resource-tracker': {
-      id: '/resource-tracker'
-      path: '/resource-tracker'
-      fullPath: '/resource-tracker'
-      preLoaderRoute: typeof ResourceTrackerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/school-matches': {
-      id: '/school-matches'
-      path: '/school-matches'
-      fullPath: '/school-matches'
-      preLoaderRoute: typeof SchoolMatchesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/simulator': {
       id: '/simulator'
       path: '/simulator'
@@ -251,8 +211,6 @@ const rootRouteChildren: RootRouteChildren = {
   AssessmentManagementRoute: AssessmentManagementRoute,
   DashboardRoute: DashboardRoute,
   PartnersRoute: PartnersRouteWithChildren,
-  ResourceTrackerRoute: ResourceTrackerRoute,
-  SchoolMatchesRoute: SchoolMatchesRoute,
   SimulatorRoute: SimulatorRoute,
 }
 export const routeTree = rootRouteImport
