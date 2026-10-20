@@ -21,11 +21,6 @@ const steps = [
   { icon: Handshake, title: "Resource Partners Contribute", description: "Potential partners propose resources that could help address the needs identified across Cameroon." },
 ];
 
-const lookingAhead = [
-  { icon: Handshake, title: "Trusted Local Partnerships" },
-  { icon: ClipboardList, title: "Infrastructure Deployment Tracking" },
-  { icon: ListFilter, title: "Measuring Educational Impact" },
-];
 
 function AboutUs() {
   return (
@@ -75,21 +70,6 @@ function AboutUs() {
           ))}
         </ol>
       </section>
-
-      <section aria-labelledby="looking-ahead-heading" className="border-t pt-6">
-        <h2 id="looking-ahead-heading" className="font-display text-2xl font-semibold">Looking Ahead</h2>
-        <p className="mt-4 max-w-3xl leading-relaxed text-muted-foreground">As CamNexus develops, it could help PS43 Foundation coordinate trusted local partners, monitor educational infrastructure projects, and measure the outcomes of resource deployment across Cameroonian communities.</p>
-        <div className="mt-5 grid gap-3 sm:grid-cols-3">
-          {lookingAhead.map((item) => (
-            <div key={item.title} className="flex items-center gap-3 rounded-lg border bg-card px-4 py-4">
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-secondary text-secondary-foreground"><item.icon className="h-4 w-4" aria-hidden /></span>
-              <p className="text-sm font-semibold">{item.title}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 text-xs text-muted-foreground">These are future opportunities, not currently implemented features.</p>
-      </section>
-
 
       <div className="border-t pt-6 text-center">
         <img src={logoAsset.url} alt="CamNexus" className="mx-auto h-8 w-auto max-w-[150px] object-contain" />
