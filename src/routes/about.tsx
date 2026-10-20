@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, ClipboardList, Handshake, HeartHandshake, ListFilter, UserRound } from "lucide-react";
+import { ArrowRight, ClipboardList, Handshake, HeartHandshake, ListFilter } from "lucide-react";
 import classroomImage from "@/assets/about-classroom.jpg";
 import logoAsset from "@/assets/camnexus-logo.png.asset.json";
 
@@ -90,18 +90,6 @@ function AboutUs() {
         <p className="mt-4 text-xs text-muted-foreground">These are future opportunities, not currently implemented features.</p>
       </section>
 
-      <section aria-labelledby="team-heading" className="border-t pt-6">
-        <h2 id="team-heading" className="font-display text-2xl font-semibold">Meet the Team</h2>
-        <div className="mt-5 grid gap-3 sm:grid-cols-3">
-          {[1, 2, 3].map((slot) => (
-            <div key={slot} className="flex items-center gap-3 rounded-lg border bg-card px-4 py-4">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-muted text-muted-foreground"><UserRound className="h-5 w-5" aria-hidden /></span>
-              <div><p className="font-semibold">Name to be added</p><p className="text-sm text-muted-foreground">Role to be added</p></div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-5 max-w-2xl text-xs leading-relaxed text-muted-foreground">Developed as a hackathon prototype for the PS43 Foundation challenge. CamNexus is not an official PS43 Foundation platform.</p>
-      </section>
 
       <div className="border-t pt-6 text-center">
         <img src={logoAsset.url} alt="CamNexus" className="mx-auto h-8 w-auto max-w-[150px] object-contain" />
