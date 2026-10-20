@@ -71,8 +71,6 @@ function AboutUs() {
         </ol>
       </section>
 
-
-
       <div className="border-t pt-6 text-center">
         <img src={logoAsset.url} alt="CamNexus" className="mx-auto h-8 w-auto max-w-[150px] object-contain" />
         <p className="mt-2 text-sm text-muted-foreground">Bridging Needs. Building Futures.</p>
